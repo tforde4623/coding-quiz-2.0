@@ -1,0 +1,45 @@
+#high-scores, #time-keeper {
+    position: absolute;
+    top: 5px;
+    font-size: 120%;
+}
+
+#high-scores {
+    left: 10px;
+}
+
+#time-keeper {
+    right: 10px;
+}
+
+.main-content {
+    margin: 100px auto 0px auto;
+    max-width: 500px;
+}
+
+.main-content h1 {
+    margin-bottom: 20px;
+}
+
+/* Styles for the answer list */
+.main-content ul {
+    /* get rid of the dots on the list */
+    list-style: none;
+    padding: 0;
+}
+
+/* style for each individual answer */
+.main-content ul li button {
+    background-color: blueviolet;
+    border: cyan solid 1px;
+    padding: 15px;
+    margin-bottom: 5px;
+    width: 250px;
+    text-align: left;
+    font-size: 120%;
+}
+
+#submit-userName {
+    margin-left: 10px;
+}
+
