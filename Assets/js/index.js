@@ -61,7 +61,6 @@ function btnPress(num) {
     let clicked = questions[questionsIndex].answers[num];
     // saving correct answer to variable using currect question index
     let correct = questions[questionsIndex].correctAnswer;
-    console.log(clicked, correct)
     // see if answer clicked is write or wrong
     if(clicked !== correct) {
         // if wrong subtract 20 points (all time from that question)
