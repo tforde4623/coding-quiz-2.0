@@ -43,3 +43,19 @@
     margin-left: 10px;
 }
 
+/* styling for buttons on scorePage */
+.horizontal-button {
+    width: auto;
+    padding: 10px;
+    background-color: blueviolet;
+    margin-right: 10px;
+    font-size: 120%;
+}
+
+/* style for high score list list els */
+#highscore-list li {
+    font-size: 120%;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
