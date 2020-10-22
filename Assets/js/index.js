@@ -63,8 +63,8 @@ function btnPress(num) {
     let correct = questions[questionsIndex].correctAnswer;
     // see if answer clicked is write or wrong
     if(clicked !== correct) {
-        // if wrong subtract 20 points (all time from that question)
-        timer -= 20;
+        // if wrong subtract 10 points (half time for that question)
+        timer -= 10;
         // set time to 0 if it goes below
         if(timer <= 0) {
             timer = 0;
