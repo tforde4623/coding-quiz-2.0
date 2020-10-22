@@ -25,7 +25,7 @@ $('#clear').on('click', function(){
 scores = JSON.parse(localStorage.getItem('highscores')) || [];
 
 // take the array we just got and sort it by score int (if we got one)
-if(scores > 0) {
+if(scores.length > 0) {
     scores.sort(function(score1, score2) {
         tempNum = score2.score - score1.score;
         return tempNum;
