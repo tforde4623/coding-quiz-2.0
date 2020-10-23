@@ -1,3 +1,7 @@
+// cache DOM for easier access (only stuff we already have in html file)
+let $contentEl = $('.main-content');
+
+
 // creating html elements in main div for score page
 // really could have done this in index.js / index.html but wanted a second document
 let title = $('<h1>');
@@ -12,7 +16,7 @@ clearBtn.text('Clear All Scores');
 clearBtn.addClass('horizontal-button');
 clearBtn.attr('id', 'clear');
 
-$('.main-content').append(title, scoreList, linkBtn, clearBtn);
+$contentEl.append(title, scoreList, linkBtn, clearBtn);
 
 // on click listener for #clearBtn to clear highscore list
 $('#clear').on('click', function(){
