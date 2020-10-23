@@ -1,3 +1,7 @@
+// cache the DOM (only for stuff we have already made in html file)
+let $contentEl = $('.main-content');
+let $timerEl = $('#time-keeper');
+
 // starting question index
 let questionsIndex = 0;
 // start timer (5 questions * 20 seconds for each)
@@ -13,12 +17,12 @@ function renderStart() {
     let body = $('<p>');
     let startBtn = $('<button>');
     // set timer placeholder
-    $('#time-keeper').text(`Time: ${timer}`);
+    $timerEl.text(`Time: ${timer}`);
     // adding text to those elements
     title.text('Coding Quiz');
     body.text("Answer the following programming questions. Rules: Time will be used as your 'score'. Finish before the time runs out. If you decided you want to get a question wrong, you will be docked time for that question. You will be given 20 seconds to answer each of the questions. Good luck!");
     startBtn.text('Lets go!');
-    $('.main-content').append(title, body, startBtn);
+    $contentEl.append(title, body, startBtn);
 
     // renderquiz function (quiz page) when startBtn clicked (eventlistener)
     startBtn.click(function(){
@@ -30,7 +34,7 @@ function renderStart() {
 
 function renderQuiz() {
     // first thing we need to do is clear the start page, or the last quesiton
-    $('.main-content').empty();
+    $contentEl.empty();
     // check if we run out of questions
     if(questionsIndex === questions.length) {
         endQuiz();
@@ -52,7 +56,7 @@ function renderQuiz() {
     });
 
         // set page content to the question (in h1) and the answers (as btns in <li>s in a list)
-        $('.main-content').append(questionHead, answerList);
+        $contentEl.append(questionHead, answerList);
     }
 }
 
@@ -81,7 +85,7 @@ function btnPress(num) {
 function Timer() {
 
     interval = setInterval(function(){
-        $('#time-keeper').text(`Time: ${timer}`);
+        $timerEl.text(`Time: ${timer}`);
         timer--;
     }, 1000);
 }
@@ -94,7 +98,7 @@ function displayFeedback(feedback) {
     newDiv.html(`<hr> <div>${feedback}!</div>`);
     newDiv.attr('id', 'feedback-div');
     // append div with feedback in it
-    $('.main-content').append(newDiv);
+    $contentEl.append(newDiv);
 
     // remove it after 3/4 a second
     let timeout = setTimeout(function(){
@@ -117,9 +121,9 @@ function endQuiz() {
     scoreIn.attr('id', 'score-input');
 
     subScore.html('Enter name: <input type="text" id="userName" /><button id="submit-userName">Submit Score</button>');
-    $('.main-content').append(title, scoreIn, subScore);
+    $contentEl.append(title, scoreIn, subScore);
     // push final time to html just so it matches up exactly with the printed score
-    $('#time-keeper').text(`Time: ${timer}`);
+    $timerEl.text(`Time: ${timer}`);
 
     // set listeners to submit button and for the enter key to run submit();
     $('#submit-userName').on('click', submit);
