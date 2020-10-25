@@ -1,13 +1,14 @@
+/* basically setting styles for the elements in the nav bars */
 #high-scores, #time-keeper {
     position: absolute;
     top: 5px;
     font-size: 120%;
 }
-
+ /* pushing high score element to the left */
 #high-scores {
     left: 10px;
 }
-
+/* pushing timer keeper element to the right */
 #time-keeper {
     right: 10px;
 }

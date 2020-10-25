@@ -2,6 +2,7 @@
 let $contentEl = $('.main-content');
 let $timerEl = $('#time-keeper');
 
+
 // starting question index
 let questionsIndex = 0;
 // start timer (5 questions * 20 seconds for each)
@@ -9,7 +10,6 @@ let timer = 100;
 // initiate a variable for interval so you can use it for it's ID later
 let iterval;
 
-// maybe make each function create stuff to PUT IN the elements, instead of new elements each time
 
 function renderStart() {
     // creating the html elements for start page
@@ -54,11 +54,11 @@ function renderQuiz() {
             // append each one to list
             answerList.append(tempLi);
     });
-
         // set page content to the question (in h1) and the answers (as btns in <li>s in a list)
         $contentEl.append(questionHead, answerList);
     }
 }
+
 
 function btnPress(num) {
     // saving which answer you clicked to a variable using the btn number to index answers
@@ -76,11 +76,13 @@ function btnPress(num) {
         // display 'Wrong'
         displayFeedback('You are wrong');
     } else {
+        // display 'correct'
         displayFeedback('You are correct');
     }
     // add one to index so next time we renderQuiz() it'll move on to next question
     questionsIndex++;
 }
+
 
 function Timer() {
 
@@ -89,6 +91,7 @@ function Timer() {
         timer--;
     }, 1000);
 }
+
 
 function displayFeedback(feedback) {
     // remove any currect feedback (if answering super fast for example)
@@ -107,6 +110,7 @@ function displayFeedback(feedback) {
         renderQuiz();
     }, 750);
 }
+
 
 function endQuiz() {
     clearInterval(interval);
@@ -135,6 +139,7 @@ function endQuiz() {
     });
 }
 
+
 function submit() {
     console.log($('#userName').val());
     if($('#userName').val().length > 0){
@@ -153,5 +158,5 @@ function submit() {
 }
 
 
-
+// call function to actually make a start page, and start the whole thing
 renderStart();
